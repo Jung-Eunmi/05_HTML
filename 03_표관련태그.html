@@ -31,10 +31,62 @@
     <!--
         표를 만드는 태그는 table, tr, th, td 가 있다.
         table : 기본적인 표를 생성
+        caption : 표이름
         tr : 표의 행을 나타내는 태그
         th : 표의 제목을 나타내는 태그
         td : 표에 들어 갈 데이터를 나타내는 태그
     -->
+    <table border="1">
+        <caption><b>메뉴 리스트</b></caption>
+        <tr>
+            <th>메뉴 이름</th>
+            <th>메뉴 가격</th>
+            <th>판매 상태</th>
+        </tr>
+        <tr> <!-- th>td*3 : th안에 td를 3개 만들어줌 -->
+            <td>과메기떡</td>
+            <td>3000</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>과메기떡</td>
+            <td>3000</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>과메기떡</td>
+            <td>3000</td>
+            <td>Y</td>
+        </tr>
+    </table>
+    <hr>
+
+    <h1>표의 행과 열 합치기</h1>
+
+    <!--
+        tb 태그의 속성을 이용해서 행과 열을 합칠 수 있다.
+        calspan : 열 합치기
+        rowspan : 행 합치기
+    -->
+    <table border="1">
+        <caption>회원정보 리스트</caption>
+        <tr>
+            <td colspan="2" rowspan="2" width="130px" height="150px">사진</td>
+            <td width="80px">이름</td>
+            <td width="200px"></td>
+        </tr>
+        <tr>
+            <td>연락처</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="70px" height="50px">주소</td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+    
+    
+
 
 
 
