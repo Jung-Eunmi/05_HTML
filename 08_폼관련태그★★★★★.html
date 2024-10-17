@@ -64,9 +64,113 @@
         <br>
 
         <label>이메일 : </label>
-        <input type="email" placeholder="이메일입력"> <!-- @ 를 안입력하면 입력하라는 주의창이 나옴 -->
+        <input type="email" placeholder="이메일입력"> <!-- @ 를 안입력하면 입력하라는 주의창이 나옴(button 으로는 안되고 submit으로만 됨) -->
         <br>
         <input type="submit" value="전송"> <!-- 버튼 만들기 -->
+    </form>
+    <hr>
+
+    <form action="#" method="get"> <!-- get 을 써서 입력창에 입력을하면 url 주소에 name으로 쓴 값이 입력됨 -->
+        <h3>숫자와 관련 된 input 태그</h3>
+        <label>수량 : </label> 
+        <input type="number" name="amount" min="0" max="10" value="0" step="3"> 
+        <!-- 숫자만 입력 가능, 숫자를 올리고 내리는 버튼도 생김, 최소최대값을 써주면 그 값범위 내에서 쓰지 않으면 주의창이 뜸, value : 기본값, step : 숫자올리는 버튼이 3씩올라감 -->
+        <br>
+        <label>점수 : </label>
+        <input type="range" name="point" min="0" max="100" value="10"> <!-- value 지정해주면 스크롤바 위치가 달라짐 -->
+        <br>
+        <input type="submit" value="전송">
+        <input type="reset" value="취소"> <!-- 입력 초기화 시켜줌 -->
+    </form>
+    <hr>
+
+    <form action="#"> <!-- method 지정해주지 않으면 기본값은 get -->
+        <h3>날짜/시간 관련 된 input 태그</h3>
+        <label>date : </label><input type="date" name="date"><br>
+        <label>month : </label><input type="month" name="month"><br>
+        <label>week : </label><input type="week" name="week"><br>
+        <label>time : </label><input type="time" name="time"><br>
+        <label>datetime : </label><input type="datetime" name="datetime"><br>  <!-- crome 브라우저에선 적용 안됨 -->
+        <label>datetime-local : </label><input type="datetime-local" name="datetime-local">
+        <input type="submit" value="전송">
+    </form>
+    <hr>
+
+    <form action="#">
+        <h3>라디오 버튼과 체크박스 버튼</h3>
+
+        <h4>라디오 버튼은 하나만 체크 될 수 있다.</h4>
+        <p>라디오 버튼은 name 속성 값을 일치시켜 그룹으로 묶는다.</p>
+        <label>성별 : </label>
+        <input id="male" type="radio" name="gender" value="남성"> <!-- name 이라는 속성이 일치하면 그룹으로 묶임 -->
+        <label for="male">남성</label>
+        <input id="female" type="radio" name="gender" value="여성">
+        <label for="female">여성</label>
+        <hr>
+
+        <h4>체크박스 버튼은 여러개 중복 체크 될 수 있다.</h4>
+        <label>취미 : </label>
+        <input type="checkbox" id="baseball" name="hobby" value="야구" checked> <!-- checked : 체크되는 기본값 됨-->
+        <label for="baseball">야구</label>
+        <input type="checkbox" id="baskeball" name="hobby" value="농구">
+        <label for="baskeball">농구</label>
+        <input type="checkbox" id="football" name="hobby" value="축구"> 
+        <label for="football">축구</label>
+        <input type="submit" value="제출">
+    </form>
+    <hr>
+
+    <form action="#">
+        <h3>그 밖의 input 태그들</h3>
+        <label>색상 선택하기  : </label>
+        <input type="color" name="color">
+        <br>
+
+        <label>파일 선택하기 : </label>
+        <input type="file" name="file" multiple> <!-- multiple : 파일 여러개를 넣어줄 수 있음 -->
+        <br>
+
+        <label>보이지 않는 태그 : </label>
+        <input type="hidden" name="hidden" value="1"> <!-- 보이지 않다가 필요 시에 보이게 할 수 있음 -->
+        <br>
+
+        <p> button 태그를 이용해서 값을 전송할 수 있다.</p>
+        <button type="button">버튼</button> <!-- 값과는 상관없이 그냥 누르는 버튼, url 주소에 입력된 값이 저장되지않음-->
+        <button type="submit">버튼2</button>
+        <p> button 의 타입을 지정하지 않으면 디폴트가 submit </p>
+        <button>버튼3</button>
+    </form>
+    <hr>
+
+    <form action="#">
+        <h2>select 태그와 option 태그</h2>
+        <p>여러 옵션 중에서 사용자들이 선택할 수 있게 만드는 드롭다운(눌렀을때 여러개를 선택할수있는 것)형식의 목록 태그이다.</p>
+        <label>국적</label>
+        <select name="nation">
+            <option value="ko">한국</option>
+            <option value="ch">중국</option>
+            <option value="jp" selected>일본</option> <!-- selected : 기본값으로 설정 됨 -->
+            <option value="etc">그 외 국가</option>
+        </select>
+        <hr>
+        <p>select 태그의 속성 : size, multiple</p>
+        <select name="nation2" size="2" multiple>
+            <option value="ko">한국</option>
+            <option value="ch">중국</option>
+            <option value="jp" selected>일본</option> <!-- selected : 기본값으로 설정 됨 -->
+            <option value="etc">그 외 국가</option>
+        </select>
+        <button>제출</button>
+    </form>
+    <hr>
+
+    <h3>textarea 태그</h3>
+    <p>input type=text 와 유사하지만, input 타입은 한 줄만 작성할 수 있는 반면 
+        여러 줄을 입력할 수 있고, 세로로 크기 조절 가능
+    </p>
+    <form action="#"> <!-- 입력을 많이 하는 textarea 같은 경우에는 get이 아닌 post를 권장함 -->
+        <textarea name="contents" clos="30" rows="30"></textarea>
+        <button>전송</button>
     </form>
 </body>
 </html>
